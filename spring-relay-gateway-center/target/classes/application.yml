@@ -1,0 +1,29 @@
+server:
+  port: 6001
+spring:
+#  cloud:
+#    gateway:
+#      routes:
+#        # 主要功能：接口路由的重定向功能。
+#        # 规则大意：访问路径：http://localhost:6001/v1/getSaleInfo，url中包含命中`/v1/getSaleInfo`该规则，命中该规则，将域名端口重定向到id.uri
+#        # 最终的访问路径是：http:// {cec-order}:{port}/v1/getSaleInfo
+#        - id: v1-order
+#          # uri重定向路径
+##          uri: lb://CEC-ORDER
+#          uri: lb://CEC-ORDER
+#          #          filter: /aaa
+#          predicates:
+#            # uri匹配路径
+#            - Path=/v1/getSaleInfo
+#            - Method=GET
+  application:
+    name: spring-relay-gateway #服务名称--调用的时候根据名称来调用该服务的方法
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    # spring.cloud.client.ip-address 此配置会默认读取本机的ip地址
+    instance-id:  ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    serviceUrl: #注册中心的注册地址
+      defaultZone: http://127.0.0.1:7001/eureka/

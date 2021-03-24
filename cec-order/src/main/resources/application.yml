@@ -1,0 +1,15 @@
+server:
+  port: 8001
+
+spring:
+  application:
+    name: cec-order #服务名称--调用的时候根据名称来调用该服务的方法
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    # spring.cloud.client.ip-address 此配置会默认读取本机的ip地址
+    instance-id:  ${spring.cloud.client.ip-address}:${server.port}
+  client:
+    serviceUrl: #注册中心的注册地址
+      defaultZone: http://127.0.0.1:7001/eureka/

@@ -1,0 +1,27 @@
+spring:
+  application:
+    name: badger-spring-cloud-alibaba-config-client
+
+nacos:
+  config:
+    server-addr: 192.168.233.128:8848
+    namespace: cec-2c-order
+
+# 阿波罗 vs nacos
+
+
+
+
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: localhost:8848
+#      config:
+#        server-addr: localhost:8848
+#        file-extension: yaml
+#management:
+#  endpoints:
+#    web:
+#      exposure:
+
+#        include: '*'
