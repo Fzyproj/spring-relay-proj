@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class TestController {
 
-    @NacosValue(value = "${gray_flag:close}", autoRefreshed = true)
+    @NacosValue(value = "${app:close}", autoRefreshed = true)
     String name;
     @NacosValue(value = "${useLocalCache:local}", autoRefreshed = true)
     String cache;

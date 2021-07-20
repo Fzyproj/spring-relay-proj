@@ -1,24 +1,25 @@
 spring:
   application:
     name: badger-spring-cloud-alibaba-config-client
+#  cloud:
+#    nacos:
+#      discovery:
+#        server-addr: 192.168.124.15:8848
+#      config:
+#        server-addr: 192.168.124.15:8848
+#        file-extension: yaml
 
 nacos:
   config:
-    server-addr: 192.168.233.128:8848
-    namespace: cec-2c-order
+    server-addr: 192.168.124.15:8848
+    namespace: 14deb308-442e-4fee-95c0-59e4eaf64964 # 这里需要指定namespace命名空间，名字是nacos自动生成或者我们自己手工指定的
 
 # 阿波罗 vs nacos
 
 
 
 
-#  cloud:
-#    nacos:
-#      discovery:
-#        server-addr: localhost:8848
-#      config:
-#        server-addr: localhost:8848
-#        file-extension: yaml
+
 #management:
 #  endpoints:
 #    web:

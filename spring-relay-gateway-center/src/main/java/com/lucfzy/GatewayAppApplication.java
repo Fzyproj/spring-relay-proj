@@ -34,4 +34,14 @@ public class GatewayAppApplication {
                 })// 微服务名不区分大小写
                 .build();
     }
+
+    public void calculate(int c) {
+        if (c == 0) {
+            return;
+        }
+        calculate(c--);
+        calculate(c--);
+        System.out.println(c);
+    }
+
 }
